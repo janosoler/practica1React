@@ -7,10 +7,16 @@ class App extends Component {
   state = {
     username : 'Tortuguita'
   }
+
+  cambiaUsername =  (event) => {
+    this.setState({
+      username: event.target.value
+    })
+  }
   render () {
     return (
       <div className="App">
-        <UserInput/>
+        <UserInput changed={this.cambiaUsername} username={this.state.username}/>
         <UserOutput username={this.state.username}/>
         <UserOutput/>
         <UserOutput/>
